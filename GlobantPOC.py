@@ -1,11 +1,15 @@
-from flask import Flask, request
+from flask import Flask, request,jsonify
 import pyodbc
 import csv
 from io import StringIO
+import logging
 
 
 
 app = Flask(__name__)
+
+logging.basicConfig(filename='error.log', level=logging.ERROR)
+
 # Cadena de conexión 
 conn_str = (
     "Driver={ODBC Driver 18 for SQL Server};"
@@ -18,10 +22,36 @@ conn_str = (
     "Connection Timeout=30;"
 )
 
+#Estructuras de las tablas que recibiran la información 
+
+estructura_tabla_hired_employees = [
+    ("id", "INTEGER"),
+    ("name", "STRING"),
+    ("datetime", "STRING"),
+    ("department_id", "INTEGER"),
+    ("job_id", "INTEGER")
+]
+
+# Función para validar tipo da datos
+
+def validar_datos_tabla(row, tipo):
+    try:
+        for encabezado, campo in enumerate(row):
+            tipo_validacion = tipo[encabezado][1]
+            if tipo_validacion == "INTEGER":
+                if not str(campo).isdigit():
+                    return False
+            elif tipo_validacion == "STRING":
+                if not isinstance(campo, str) or len(campo) < 1:
+                    return False
+        return True
+    except IndexError:
+        return False
+
 
 @app.route('/hired_employees', methods=['POST'])
 def nuevos_empleados_csv():
-    
+    try:
         # Recibir el archivo 
         print("Se va a leer el archivo")
         csv_file = request.files['file']
@@ -36,17 +66,40 @@ def nuevos_empleados_csv():
 
         # Leer el archivo CSV e insertar los datos en la tabla hired_employees
         csv_reader = csv.reader(csv_buffer)
-        
+
+        batch_size = 0
+
         for row in csv_reader:
-            
+
+            # Lanzar función para validar
+            if validar_datos_tabla(row,estructura_tabla_hired_employees):
                 # Insert a la tabla hired_employees
                 cursor.execute("INSERT INTO globant.hired_employees (id, name, datetime, department_id, job_id) VALUES (?, ?, ?, ?, ?)", (row[0], row[1], row[2], row[3], row[4]))
+            
+                # Contar el número de filas, para hacer commit, cada 1000 filas
+                batch_size += 1
+                print(batch_size)
+                if batch_size == 1000:
+                    conn.commit()
+                    batch_size = 0
+
+            else:
+                # Enviar al Log la fila que no pasó la validación de datos
+                logging.error(f"Fila no válida: {row}")
+                
+
         # cerrar la conexión a la BD
         conn.commit()
         conn.close()
 
-        return "Empleados insertados correctamente"
-
+        print("Insert terminado correctamente")
+        return "Insert terminado correctamente"
+    
+    except Exception as e:
+        # Registrar el error en el archivo de registro de errores
+        logging.error(f"Error en el insert de la tabla hired_employees: {str(e)}")
+        print(f"Error en el insert de la tabla hired_employees: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     # Ejecutar la aplicación Flask
