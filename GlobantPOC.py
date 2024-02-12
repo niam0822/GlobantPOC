@@ -1,8 +1,12 @@
+from flask import Flask, request
 import pyodbc
-from flask import Flask
+import csv
+from io import StringIO
+
+
 
 app = Flask(__name__)
-# Cadena de conexión ODBC
+# Cadena de conexión 
 conn_str = (
     "Driver={ODBC Driver 18 for SQL Server};"
     "Server=tcp:globant-server.database.windows.net,1433;"
@@ -14,29 +18,35 @@ conn_str = (
     "Connection Timeout=30;"
 )
 
-# Conectarse a la base de datos
-conexion = pyodbc.connect(conn_str)
 
-# Crear un cursor
-cursor = conexion.cursor()
+@app.route('/hired_employees', methods=['POST'])
+def nuevos_empleados_csv():
+    
+        # Recibir el archivo 
+        print("Se va a leer el archivo")
+        csv_file = request.files['file']
+        
+        # Leer el archivo 
+        csv_content = csv_file.read().decode('utf-8')
+        csv_buffer = StringIO(csv_content)
 
-# Ejecutar una consulta
-cursor.execute("SELECT TOP 10  * FROM globant.hired_employees")
+        # Conexión a la Base de Datos 
+        conn = pyodbc.connect(conn_str)
+        cursor = conn.cursor()
 
-# Obtener los resultados
-resultados = cursor.fetchall()
+        # Leer el archivo CSV e insertar los datos en la tabla hired_employees
+        csv_reader = csv.reader(csv_buffer)
+        
+        for row in csv_reader:
+            
+                # Insert a la tabla hired_employees
+                cursor.execute("INSERT INTO globant.hired_employees (id, name, datetime, department_id, job_id) VALUES (?, ?, ?, ?, ?)", (row[0], row[1], row[2], row[3], row[4]))
+        # cerrar la conexión a la BD
+        conn.commit()
+        conn.close()
 
-# Imprimir los resultados
-for fila in resultados:
-    print(fila)
+        return "Empleados insertados correctamente"
 
-# Cerrar la conexión
-conexion.close()
-
-
-@app.route('/api/hola_mundo', methods=['GET'])
-def hola_mundo():
-    return 'HOLA MUNDO'
 
 if __name__ == '__main__':
     # Ejecutar la aplicación Flask
