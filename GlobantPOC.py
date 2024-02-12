@@ -1,5 +1,7 @@
 import pyodbc
+from flask import Flask
 
+app = Flask(__name__)
 # Cadena de conexión ODBC
 conn_str = (
     "Driver={ODBC Driver 18 for SQL Server};"
@@ -30,3 +32,13 @@ for fila in resultados:
 
 # Cerrar la conexión
 conexion.close()
+
+
+@app.route('/api/hola_mundo', methods=['GET'])
+def hola_mundo():
+    return 'HOLA MUNDO'
+
+if __name__ == '__main__':
+    # Ejecutar la aplicación Flask
+    app.run(debug=True)
+
