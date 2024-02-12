@@ -7,6 +7,9 @@ import logging
 
 
 app = Flask(__name__)
+
+logging.basicConfig(filename='error.log', level=logging.ERROR)
+
 # Cadena de conexión 
 conn_str = (
     "Driver={ODBC Driver 18 for SQL Server};"
@@ -18,6 +21,30 @@ conn_str = (
     "TrustServerCertificate=no;"
     "Connection Timeout=30;"
 )
+
+estructura_tabla_hired_employees = [
+    ("id", "INTEGER"),
+    ("name", "STRING"),
+    ("datetime", "STRING"),
+    ("department_id", "INTEGER"),
+    ("job_id", "INTEGER")
+]
+
+def validar_datos_tabla(row, tipo):
+    try:
+        for encabezado, campo in enumerate(row):
+            tipo_validacion = tipo[encabezado][1]
+            if tipo_validacion == "INTEGER":
+                if not str(campo).isdigit():
+                    return False
+            elif tipo_validacion == "STRING":
+                if not isinstance(campo, str) or len(campo) < 1:
+                    return False
+        return True
+    except IndexError:
+        return False
+
+
 
 # Función para validar tipo da datos
 
@@ -75,7 +102,7 @@ def nuevos_empleados_csv():
         for row in csv_reader:
 
             # Lanzar función para validar
-            if validar_hired_employees(row):    
+            if validar_datos_tabla(row,estructura_tabla_hired_employees):
                 # Insert a la tabla hired_employees
                 cursor.execute("INSERT INTO globant.hired_employees (id, name, datetime, department_id, job_id) VALUES (?, ?, ?, ?, ?)", (row[0], row[1], row[2], row[3], row[4]))
             

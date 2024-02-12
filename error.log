@@ -1,0 +1,7 @@
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+ERROR:root:Fila no válida: ['1', 'Harold Vogt', '2021-11-07T02:48:42Z', '2', 'x']
+ERROR:root:Fila no válida: ['2', 'Ty Hofer', '2021-05-30T05:43:46Z', '8', '']
+ERROR:root:Fila no válida: ['3', 'Lyman Hadye', '2021-09-01T23:27:38Z', 'B', '52']
+ERROR:root:Fila no válida: ['A', 'Marlow Antecki', '2021-04-23T23:45:42Z', '6', '95']
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 15:33:24] "POST /hired_employees HTTP/1.1" 200 -
