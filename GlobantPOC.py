@@ -69,13 +69,23 @@ def nuevos_empleados_csv():
 
         # Leer el archivo CSV e insertar los datos en la tabla hired_employees
         csv_reader = csv.reader(csv_buffer)
-    
+
+        batch_size = 0
+
         for row in csv_reader:
 
             # Lanzar función para validar
             if validar_hired_employees(row):    
                 # Insert a la tabla hired_employees
                 cursor.execute("INSERT INTO globant.hired_employees (id, name, datetime, department_id, job_id) VALUES (?, ?, ?, ?, ?)", (row[0], row[1], row[2], row[3], row[4]))
+            
+                # Contar el número de filas, para hacer commit, cada 1000 filas
+                batch_size += 1
+                print(batch_size)
+                if batch_size == 1000:
+                    conn.commit()
+                    batch_size = 0
+
             else:
                 # Enviar al Log la fila que no pasó la validación de datos
                 logging.error(f"Fila no válida: {row}")
