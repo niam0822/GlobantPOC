@@ -22,6 +22,8 @@ conn_str = (
     "Connection Timeout=30;"
 )
 
+#Estructuras de las tablas que recibiran la información 
+
 estructura_tabla_hired_employees = [
     ("id", "INTEGER"),
     ("name", "STRING"),
@@ -29,6 +31,8 @@ estructura_tabla_hired_employees = [
     ("department_id", "INTEGER"),
     ("job_id", "INTEGER")
 ]
+
+# Función para validar tipo da datos
 
 def validar_datos_tabla(row, tipo):
     try:
@@ -42,40 +46,6 @@ def validar_datos_tabla(row, tipo):
                     return False
         return True
     except IndexError:
-        return False
-
-
-
-# Función para validar tipo da datos
-
-def validar_hired_employees(row):
-    
-    try:
-        # Convertir los datos según las estructuras
-        id = int(row[0])
-        name = row[1]
-        datetime_val = row[2]
-        department_id = int(row[3])
-        job_id = int(row[4])
-        
-        # Verificar si los tipo de datos coinciden 
-        if not str(id).isdigit():
-            return False
-        if len(name)<1:
-            return False
-        if len(datetime_val)<1:
-            return False
-        # Verificar que el department_id y job_id sean enteros
-        if not (str(department_id).isdigit() and str(job_id).isdigit()):
-            return False
-        if not (str(job_id).isdigit()):
-            return False
-        
-        # Si todos coinciden enviar True
-        return True
-
-    except ValueError:
-        # Si falla en alguno enviar False
         return False
 
 
