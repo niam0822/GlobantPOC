@@ -1,4 +1,4 @@
-from flask import Flask, request,jsonify
+from flask import Flask, request,jsonify,render_template
 import pyodbc
 import csv
 from io import StringIO
@@ -194,6 +194,138 @@ def load_hired_employees():
         return "Cargue terminado correctamente"
     
     
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+
+@app.route('/RequirementOne', methods=['GET'])
+
+def RequirementOne():
+    try:
+        conn = pyodbc.connect(conn_str)
+        cursor = conn.cursor()
+        cursor.execute("""  
+                       WITH Temp AS (
+                        SELECT 
+                            DISTINCT department, 
+                            job, 
+                            datetime 
+                        FROM 
+                            globant.hired_employees e 
+                            JOIN globant.jobs j ON e.job_id = j.id 
+                            JOIN globant.departments d ON e.department_id = d.id 
+                        WHERE 
+                            YEAR(
+                            CONVERT(datetime, datetime)
+                            ) = 2021
+                        ) 
+                        SELECT 
+                        Department, 
+                        Job, 
+                        ISNULL([Q1], 0) AS Q1, 
+                        ISNULL([Q2], 0) AS Q2, 
+                        ISNULL([Q3], 0) AS Q3, 
+                        ISNULL([Q4], 0) AS Q4 
+                        FROM 
+                        (
+                            SELECT 
+                            Department, 
+                            Job, 
+                            CASE WHEN DATEPART(QUARTER, datetime) = 1 THEN 'Q1' WHEN DATEPART(QUARTER, datetime) = 2 THEN 'Q2' WHEN DATEPART(QUARTER, datetime) = 3 THEN 'Q3' WHEN DATEPART(QUARTER, datetime) = 4 THEN 'Q4' END AS Quarter 
+                            FROM 
+                            Temp
+                        ) AS SourceTable PIVOT (
+                            COUNT(Quarter) FOR Quarter IN (Q1, Q2, Q3, Q4)
+                        ) AS PivotQuarter 
+                        ORDER BY 
+                        Department, 
+                        job ASC
+                        """)
+        resultado = cursor.fetchall()
+        for fila in resultado:
+            print(fila) 
+        
+        # tabla HTML
+        table_html = "<table border='1'><tr>"
+        # Encabezados de la tabla
+        for column in cursor.description:
+            table_html += "<th>" + column[0] + "</th>"
+        table_html += "</tr>"
+        
+        # Llenar la tabla
+        for fila in resultado:
+            table_html += "<tr>"
+            for dato in fila:
+                table_html += "<td>" + str(dato) + "</td>"
+            table_html += "</tr>"
+        table_html += "</table>"
+        
+        return table_html
+        
+        
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+@app.route('/RequirementTwo', methods=['GET'])
+
+def RequirementTwo():
+    try:
+        conn = pyodbc.connect(conn_str)
+        cursor = conn.cursor()
+        cursor.execute("""  
+                       SELECT 
+                            departments.id AS department_id,
+                            departments.department AS department_name,
+                            COUNT(hired_employees.id) AS num_employees_hired
+                        FROM 
+                            globant.hired_employees
+                        JOIN 
+                            globant.departments ON hired_employees.department_id = departments.id
+                        WHERE 
+                            hired_employees.datetime LIKE '2021-%'
+                        GROUP BY 
+                            departments.id, departments.department
+                        HAVING 
+                            COUNT(hired_employees.id) > (
+                                SELECT 
+                                    AVG(num_employees_hired)
+                                FROM (
+                                    SELECT 
+                                        COUNT(hired_employees.id) AS num_employees_hired
+                                    FROM 
+                                        globant.hired_employees
+                                    WHERE 
+                                        hired_employees.datetime LIKE '2021-%'
+                                    GROUP BY 
+                                        department_id
+                                ) AS avg_employees
+                            )
+                        ORDER BY 
+                            COUNT(hired_employees.id) DESC
+                        """)
+        resultado = cursor.fetchall()
+        for fila in resultado:
+            print(fila) 
+        
+        #  tabla HTML
+        table_html = "<table border='1'><tr>"
+        # Encabezados de la tabla
+        for column in cursor.description:
+            table_html += "<th>" + column[0] + "</th>"
+        table_html += "</tr>"
+        
+        # Llenar la tabla
+        for fila in resultado:
+            table_html += "<tr>"
+            for dato in fila:
+                table_html += "<td>" + str(dato) + "</td>"
+            table_html += "</tr>"
+        table_html += "</table>"
+        
+        return table_html
+        
+        
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 

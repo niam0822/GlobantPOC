@@ -119,3 +119,59 @@ ERROR:root:Fila no válida en la tabla de Hired Employees: ['12', 'Jacky Oldred',
 ERROR:root:Fila no válida en la tabla de Hired Employees: ['1149', '', '2021-10-19T20:10:46Z', '8', '68']
 ERROR:root:Fila no válida en la tabla de Hired Employees: ['8223', '', '2022-02-20T07:46:22Z', '6', '85']
 INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 22:18:28] "POST /Load_Data HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:05:33] "[33mGET /RequirimentOne HTTP/1.1[0m" 404 -
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:05:40] "[31m[1mGET /RequirementOne HTTP/1.1[0m" 405 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:06:08] "GET /RequirementOne HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:08:50] "[35m[1mGET /RequirementOne HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:10:13] "[35m[1mGET /RequirementOne HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:12:21] "GET /RequirementOne HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:14:17] "GET /RequirementOne HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:14:54] "GET /RequirementOne HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:40:12] "GET /RequirementTwo HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 23:40:18] "GET /RequirementOne HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
