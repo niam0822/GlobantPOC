@@ -1,15 +1,121 @@
-WARNING:werkzeug: * Debugger is active!
-INFO:werkzeug: * Debugger PIN: 782-313-863
-ERROR:root:Fila no válida: ['1', 'Harold Vogt', '2021-11-07T02:48:42Z', '2', 'x']
-ERROR:root:Fila no válida: ['2', 'Ty Hofer', '2021-05-30T05:43:46Z', '8', '']
-ERROR:root:Fila no válida: ['3', 'Lyman Hadye', '2021-09-01T23:27:38Z', 'B', '52']
-ERROR:root:Fila no válida: ['A', 'Marlow Antecki', '2021-04-23T23:45:42Z', '6', '95']
-INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 15:33:24] "POST /hired_employees HTTP/1.1" 200 -
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['2', 'Ty Hofer', '2021-05-30T05:43:46Z', '8', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['67', 'Thia Morican', '2021-03-10T19:27:10Z', '', '104']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['84', 'Ludvig Norwood', '2021-02-26T18:47:53Z', '3', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['87', 'Cirstoforo Martinetto', '2021-10-15T09:19:20Z', '', '84']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['97', 'Beltran Natte', '2021-11-01T05:12:01Z', '', '67']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['133', 'Jennine Wapol', '2022-01-24T14:45:57Z', '', '49']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['157', 'Kellia Barribal', '', '4', '61']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['162', '', '2021-04-22T14:31:39Z', '4', '91']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['198', 'Carline Fryman', '2021-05-29T00:23:02Z', '5', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['207', 'Ahmad Fader', '2021-05-03T04:57:25Z', '', '66']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['216', 'Theobald Tzarkov', '2022-01-26T14:56:48Z', '', '87']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['340', '', '2022-01-13T21:09:49Z', '4', '45']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['350', '', '2021-07-13T23:34:40Z', '10', '86']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['393', 'Bogey Hanwell', '2022-01-05T17:29:34Z', '6', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['533', 'Tiertza Vanyashin', '2022-02-04T20:16:06Z', '3', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['571', '', '2021-11-28T02:28:40Z', '7', '69']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['623', '', '2022-01-04T17:42:48Z', '7', '48']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['663', 'Catha Gowrie', '', '4', '85']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['685', 'Bruno Pales', '2022-01-16T19:23:39Z', '', '92']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['758', 'Dyanne Rainy', '2021-06-11T00:56:42Z', '8', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['766', '', '2021-05-31T05:31:53Z', '2', '67']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['773', '', '2021-11-16T02:34:50Z', '5', '35']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['789', 'Jennine Fakeley', '', '2', '94']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['792', 'Hetty Cawthery', '2022-01-21T11:08:04Z', '10', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['824', 'Kaitlynn Rannald', '2021-04-18T15:11:19Z', '', '64']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['831', '', '2021-10-22T16:30:46Z', '6', '11']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['832', 'Letta Paull', '2021-10-29T02:35:02Z', '', '122']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['932', 'Celeste Stops', '2021-02-07T22:14:01Z', '8', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['937', '', '2021-03-26T20:41:40Z', '3', '60']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['942', 'Joaquin Kamenar', '2021-11-29T11:54:05Z', '', '64']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['955', 'Shena Gore', '2021-08-16T21:25:08Z', '9', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['961', 'Lionello Andriesse', '2022-02-12T05:19:44Z', '8', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['970', '', '2021-08-08T06:06:40Z', '4', '33']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1049', '', '2021-05-08T23:05:13Z', '6', '91']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1092', 'Floria Bineham', '', '7', '137']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1095', 'Lowell Blaber', '', '9', '141']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1098', 'Colman Bleesing', '2021-10-12T17:55:32Z', '', '77']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1110', 'Renee Bowe', '2021-08-31T20:26:32Z', '', '112']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1130', '', '2021-10-19T08:43:38Z', '1', '128']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1170', '', '2021-03-15T10:47:48Z', '7', '130']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1195', '', '2021-08-13T09:22:18Z', '10', '54']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1252', 'Merrily Di Biaggi', '', '7', '19']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1279', 'Phaidra Dubbin', '2021-10-25T12:19:32Z', '', '38']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1304', 'Tildie Elby', '2021-09-29T14:02:27Z', '8', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1322', '', '2021-03-26T23:44:34Z', '5', '47']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1323', 'Erv Fazan', '', '8', '34']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1413', 'Berna Grigorkin', '2021-08-02T13:21:07Z', '', '103']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1423', 'Rozelle Hadleigh', '2021-08-08T01:23:27Z', '', '108']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1432', 'Jerrine Hammerson', '2022-01-20T22:47:27Z', '', '98']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1463', 'Shell Houdhury', '2022-01-04T17:20:18Z', '', '50']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1467', 'Sully Huc', '', '8', '148']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1474', 'Calhoun Iacovolo', '2021-03-06T03:02:20Z', '7', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1483', 'Paco Ivain', '', '5', '41']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1493', '', '2021-03-20T10:48:47Z', '10', '153']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1523', 'Darelle Kenaway', '2021-05-08T10:51:07Z', '7', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1561', 'Saxon Lehmann', '2021-10-28T18:29:31Z', '3', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1589', 'Emmeline MacGrath', '2021-12-12T04:57:39Z', '11', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1590', 'Niven Mackrell', '2021-05-17T07:18:48Z', '', '85']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1613', 'Sigrid Matysik', '2022-02-15T21:20:01Z', '', '143']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1686', 'Bessy Oakeby', '', '4', '53']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1688', '', '2022-01-20T19:51:12Z', '11', '100']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1714', 'Mala Pales', '2021-05-04T04:52:48Z', '', '70']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1780', 'Annabelle Reilly', '', '6', '46']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1799', '', '2021-03-10T07:35:09Z', '8', '111']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1814', 'Theodore Sammut', '', '6', '86']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1858', '', '2021-06-28T03:01:01Z', '6', '144']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1860', 'Marin Slipper', '2022-02-08T10:39:02Z', '4', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1869', 'Cesaro Solomon', '', '6', '66']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1925', 'Cary Tothe', '', '3', '104']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1987', 'Shaina Wyldish', '2021-12-13T10:05:09Z', '', '102']
+ERROR:root:Fila no válida en la tabla de Departments: ['A', 'Sales']
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 22:07:53] "POST /Load_Data HTTP/1.1" 200 -
+ERROR:root:Error en el insert de la tabla hired_employees: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 22:10:54] "[35m[1mPOST /Load_Data HTTP/1.1[0m" 500 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
 WARNING:werkzeug: * Debugger is active!
 INFO:werkzeug: * Debugger PIN: 782-313-863
-ERROR:root:Fila no válida: ['1', 'Harold Vogt', '2021-11-07T02:48:42Z', '2', 'x']
-ERROR:root:Fila no válida: ['2', 'Ty Hofer', '2021-05-30T05:43:46Z', '8', '']
-ERROR:root:Fila no válida: ['3', 'Lyman Hadye', '2021-09-01T23:27:38Z', 'B', '52']
-ERROR:root:Fila no válida: ['A', 'Marlow Antecki', '2021-04-23T23:45:42Z', '6', '95']
-INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 15:38:31] "POST /hired_employees HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 22:11:44] "POST /Load_Data HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['2', 'Ty Hofer', '2021-05-30T05:43:46Z', '8', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['A', 'Lucretia Northcote', '2021-04-01T21:22:47Z', '9', '8']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['12', 'Jacky Oldred', '', '7', '29']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1149', '', '2021-10-19T20:10:46Z', '8', '68']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['8223', '', '2022-02-20T07:46:22Z', '6', '85']
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 22:17:10] "POST /Load_Data HTTP/1.1" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\CristianDanielIbarra\\OneDrive - SQDM\\Documentos\\Globant\\GlobantPOC\\GlobantPOC\\GlobantPOC.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 782-313-863
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['2', 'Ty Hofer', '2021-05-30T05:43:46Z', '8', '']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['A', 'Lucretia Northcote', '2021-04-01T21:22:47Z', '9', '8']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['12', 'Jacky Oldred', '', '7', '29']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['1149', '', '2021-10-19T20:10:46Z', '8', '68']
+ERROR:root:Fila no válida en la tabla de Hired Employees: ['8223', '', '2022-02-20T07:46:22Z', '6', '85']
+INFO:werkzeug:127.0.0.1 - - [12/Feb/2024 22:18:28] "POST /Load_Data HTTP/1.1" 200 -
