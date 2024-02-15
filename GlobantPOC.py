@@ -1,4 +1,4 @@
-from flask import Flask, request,jsonify,render_template
+from flask import Flask, request,jsonify
 import pyodbc
 import csv
 from io import StringIO
